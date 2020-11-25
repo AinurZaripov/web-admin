@@ -1,6 +1,7 @@
 import {fetchUtils, Admin, Resource, EditGuesser } from 'react-admin';
-import { ProductsCreate, ProductsEdit, ProductsList } from './products';
-import { AddressesList } from './addresses';
+import { ProductsCreate, ProductsEdit, ProductsList } from './Components/products';
+import { AddressesList, AddressesEdit, AddressesCreate } from './Components/addresses';
+import { UsersList, UsersEdit, UsersCreate } from './Components/users';
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -21,8 +22,9 @@ function App() {
   return (
     <div className="App">
       <Admin dataProvider={dataProvider}>
-          <Resource name="Products" list={ProductsList} edit={ProductsEdit}/> 
-          <Resource name="Addresses" list={AddressesList} edit={EditGuesser} /> 
+          <Resource name="Products" list={ProductsList} edit={ProductsEdit} create={ProductsCreate}/> 
+          <Resource name="Addresses" list={AddressesList} edit={AddressesEdit} create={AddressesCreate}/> 
+          <Resource name="Users" list={UsersList} edit={UsersEdit} create={UsersCreate} /> 
       </Admin>
     </div>
   );  

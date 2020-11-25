@@ -1,4 +1,3 @@
-
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 
@@ -18,7 +17,7 @@ export default {
 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
-            total: parseInt(headers.get('content-range'), 10),
+            total: parseInt(headers.get('content-range').split('/').pop(), 10),
         }));
     },
 
@@ -50,16 +49,13 @@ export default {
 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
-            total: parseInt(headers.get('content-range'), 10),
+            total: parseInt(headers.get('content-range').split('/').pop(), 10),
         }));
     },
 
     update: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'PUT',
-        //     headers: {
-        //         'Access-Control-Allow-Origin': '*',
-        // },
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({ data: json })),
 
@@ -94,5 +90,5 @@ export default {
             method: 'DELETE',
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({ data: json }));
-    }
+    },
 };

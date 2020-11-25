@@ -9,8 +9,8 @@ export const ProductsList = props => (
             <TextField source="name" />
             <TextField source="description" />
             <TextField source="price" />
-            <ReferenceField source="addressId" reference="Address">
-                <TextField source="id" />
+            <ReferenceField source="addressId" reference="Addresses">
+                <TextField source="name" />
             </ReferenceField>
             {/* <TextField source="addressId" />
             <TextField source="address" /> */}
@@ -26,8 +26,8 @@ export const ProductsEdit = props => (
             <TextInput source="name" />
             <TextInput source="description" />
             <TextInput source="price" />
-            <TextField source="addressId" />
-            <TextField source="address" />
+            <TextInput source="addressId" />
+            <TextInput source="address" />
 
         </SimpleForm>
     </Edit>
@@ -40,8 +40,8 @@ export const ProductsCreate = props => (
             <TextInput source="name" />
             <TextInput source="description" />
             <TextInput source="price" />
-            <TextField source="addressId" />
-            <TextField source="address" />
+            <TextInput source="addressId" />
+            <TextInput source="address" />
         </SimpleForm>
     </Create>
 );
