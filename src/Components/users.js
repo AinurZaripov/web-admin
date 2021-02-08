@@ -10,7 +10,7 @@ export const UsersList = props => (
             <TextField source="firstName" />
             <TextField source="middleName" />
             <TextField source="role" />
-            <EditButton />
+            <EditButton  />
         </Datagrid>
     </List>
 );
