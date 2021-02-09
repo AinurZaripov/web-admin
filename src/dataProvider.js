@@ -2,6 +2,7 @@ import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 
 const apiUrl = 'https://localhost:44302/api';
+//const apiUrl = 'https://jsonplaceholder.typicode.com';
 const httpClient = fetchUtils.fetchJson;
 
 export default {

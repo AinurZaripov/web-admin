@@ -10,7 +10,7 @@ export const UsersList = props => (
             <TextField source="firstName" />
             <TextField source="middleName" />
             <TextField source="role" />
-            <EditButton  />
+            <EditButton />
         </Datagrid>
     </List>
 );
@@ -18,10 +18,10 @@ export const UsersList = props => (
 export const UsersEdit = props => (
     <Edit {...props}>
         <SimpleForm>
-            <TextField source="lastName" />
-            <TextField source="firstName" />
-            <TextField source="middleName" />
-            <TextField source="role" />
+            <TextInput source="lastName" />
+            <TextInput source="firstName" />
+            <TextInput source="middleName" />
+            <TextInput source="role" />
         </SimpleForm>
     </Edit>
 );

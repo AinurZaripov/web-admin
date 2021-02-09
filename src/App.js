@@ -18,16 +18,12 @@ import dataProvider from './dataProvider';
 // };
 // const dataProvider = jsonServerProvider('https://localhost:44382/api', httpClient);
 
-function App() {
-  return (
-    <div className="App">
-      <Admin dataProvider={dataProvider}>
+const App = () => (
+  <Admin dataProvider={dataProvider}>
           <Resource name="Products" list={ProductsList} edit={ProductsEdit} create={ProductsCreate}/> 
-          <Resource name="Addresses" list={AddressesList} edit={AddressesEdit} create={AddressesCreate}/> 
+          <Resource name="addresses" list={AddressesList} edit={AddressesEdit} create={AddressesCreate}/> 
           <Resource name="Users" list={UsersList} edit={UsersEdit} create={UsersCreate} /> 
       </Admin>
-    </div>
-  );  
-}
+);  
 
 export default App;
