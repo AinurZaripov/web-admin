@@ -1,9 +1,21 @@
 // in src/users.js
 import * as React from "react";
-import { List, Datagrid, TextField, TextInput, Create, Edit, SimpleForm, EditButton, ReferenceField   } from 'react-admin';
+import { List, Datagrid, TextField, TextInput, Create, Edit, SimpleForm,
+     EditButton, SelectInput, ReferenceInput, Filter  } from 'react-admin';
+
+const AddressesTitle = ({ record }) => 
+{
+    return <span>Address name: {record ? `"${record.name}"` : ''}</span>;
+};
+
+const AddressesFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="id" alwaysOn />
+    </Filter>
+);
 
 export const AddressesList = props => (
-    <List {...props}>
+    <List filters={<AddressesFilter/>} {...props}>
         <Datagrid>
             <TextField source="id" />
             <TextField source="name" />
@@ -13,18 +25,18 @@ export const AddressesList = props => (
 );
 
 export const AddressesEdit = props => (
-    <Edit {...props}>
+    <Edit title={<AddressesTitle/>} {...props}>
         <SimpleForm>
-            <TextInput disabled source="id" />
+            {/* <TextInput disabled source="id" /> */}
             <TextInput source="name" />
         </SimpleForm>
     </Edit>
 );
 
 export const AddressesCreate = props => (
-    <Create {...props}>
+    <Create title={<AddressesTitle/>} {...props}>
         <SimpleForm>
-            <TextInput disabled source="id" />
+            {/* <TextInput disabled source="id" /> */}
             <TextInput source="name" />
         </SimpleForm>
     </Create>
