@@ -10,7 +10,7 @@ const PostTitle = ({ record }) =>
 
 const ProductFilter = (props) => (
     <Filter {...props}>
-        <TextInput label="Search" source="q" alwaysOn />
+        <TextInput label="Search" source="id" alwaysOn />
         <ReferenceInput label="Name" source="addressId" reference="addresses" allowEmpty>
             <SelectInput optionText="name" />
         </ReferenceInput>

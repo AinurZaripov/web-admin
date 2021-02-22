@@ -10,10 +10,7 @@ const AddressesTitle = ({ record }) =>
 
 const AddressesFilter = (props) => (
     <Filter {...props}>
-        <TextInput label="Search" source="q" alwaysOn />
-        <ReferenceInput label="Name" source="id" reference="name" allowEmpty>
-            <SelectInput optionText="name" />
-        </ReferenceInput>
+        <TextInput label="Search" source="id" alwaysOn />
     </Filter>
 );
 
